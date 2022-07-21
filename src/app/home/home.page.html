@@ -1,0 +1,35 @@
+<ion-app>
+  <!--Header-->
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>My Course</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <!--content-->
+  <ion-content>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size-md="6" offset-md="3">
+          <ion-item>
+            <ion-label position="floating">Course Label</ion-label>
+            <ion-input type="text" [(ngModel)]="courseName"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Course Rating</ion-label>
+            <ion-input type="text" [(ngModel)]="courseRating"></ion-input>
+          </ion-item>
+          <ion-button class="ion-margin-vertical" color="primary" (click)="onSubmit()">Add</ion-button>
+
+          <ion-list *ngFor="let name of course">
+            <ion-item>
+              <ion-label><strong>{{name.courseName}}</strong> - {{name.courseRating}}</ion-label>
+            </ion-item>
+          </ion-list>
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+
+</ion-app>
